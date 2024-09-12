@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/7d201dd4bd.js" crossorigin="anonymous"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playball&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Open Sans", sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primaryLiteColor: #fffcf8;
+            --primaryColor: #d4a762;
+            --secondaryColor: #9a9a9a;
+            --blackColor: #000000;
+            --whiteColor: #ffffff;
+            --fontFamily: "Playball", cursive;
+            --paddingAll: 25px;
+            --fontSizeH1: 40px;
+            --fontSizeH4: 15px;
+            --fontSizeH3: 18px;
+            --fontWeight600: 600;
+            --fontWeight500: 500;
+        }
+
+        /* Navbar Style */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            padding: var(--paddingAll);
+            border-bottom: 1px solid var(--secondaryColor);
+            position: fixed;
+            width: 100%;
+            background-color: var(--primaryLiteColor);
+            z-index: 999;
+
+        }
+
+        nav h1 {
+            padding-bottom: 0;
+        }
+
+        .domain-name {
+            font-family: var(--fontFamily);
+            font-size: 40px;
+        }
+
+        .domain-name span {
+            color: var(--primaryColor);
+            font-family: var(--fontFamily);
+        }
+
+        /* Menu Items */
+        nav .menu-items {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: var(--fontWeight600);
+            transition: all 2s;
+        }
+
+        /* Menu Items Link Tag */
+        nav a {
+            text-decoration: none;
+            color: var(--secondaryColor);
+            padding: 10px;
+            font-size: 17px;
+        }
+
+        nav a:hover {
+            color: var(--primaryColor);
+        }
+
+        /* Additional Icon Container Style  */
+        /* nav .icon-items {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 28px;
+} */
+        nav>div:nth-child(5) a {
+            display: block;
+            position: relative;
+
+        }
+
+        nav  label:hover .items-box {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 70px;
+            left: 820px;
+            background-color: #fffcf8;
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        .items-box {
+            display: none;
+        }
+
+        .page-icon {
+            font-size: 14px;
+            transform: rotate(360deg);
+        }
+
+        /* .items-box  a{
+            z-index: 9;
+        } */
+
+        /* All Input Tag Style */
+        /* nav input {
+    display: none;
+} */
+
+        /* Features of Menu Input Tag */
+        /* nav input:checked~.menu-items {
+    left: 0%;
+    top: 83px;
+    align-items: center;
+    z-index: 99;
+} */
+
+
+
+        .menu-icon {
+            display: none;
+        }
+
+        .search-icon {
+            display: inline-block;
+            height: 45px;
+            width: 45px;
+            border-radius: 50%;
+            background-color: var(--primaryColor);
+            font-size: 20px;
+            font-weight: 700;
+            /* Centering Icon */
+            align-content: center;
+            text-align: center;
+        }
+
+        /* @media only screen and (min-width:300px) and (max-width:768px) {
+            Navbar Style
+
+            nav {
+                justify-content: space-between;
+                padding: 25px 50px;
+            }
+
+            nav .domain-name {
+                font-size: 25px;
+            }
+
+            nav .menu-items {
+
+                flex-direction: column;
+                align-items: center;
+                position: absolute;
+                padding-left: 20px;
+                background-color: var(--primaryLiteColor);
+                width: 100%;
+                top: 83px;
+                left: 100%;
+            }
+
+
+
+            nav .icon-items {
+                display: none;
+            }
+
+            .menu-icon {
+                display: unset;
+                font-size: 20px;
+            }
+        } */
+
+        /* @media only screen and (min-width:768px) and (max-width:992px) {
+
+            Navbar Style
+            nav {
+                justify-content: space-between;
+                padding: 25px 50px;
+            }
+
+            nav .domain-name {
+                font-size: 25px;
+            }
+
+            nav .menu-items {
+                flex-direction: column;
+                position: absolute;
+                padding-left: 20px;
+                background-color: var(--primaryLiteColor);
+                width: 100%;
+                top: 105px;
+                left: 100%;
+            }
+
+            nav .icon-items {
+                display: none;
+            }
+        } */
+        /* nav input[id="page-icon"]:checked~.menu-items .items-box{
+        display: flex;
+    } */
+
+        /* nav input[id="page-icon"]:checked~.menu-items .page-icon{
+        display: none;
+    } */
+        /* nav input[id="page-icon"]:checked~.menu-items .page-icon{
+
+    } */
+    </style>
+</head>
+
+<body>
+    <nav>
+        <h1 class="domain-name"><span>Cater</span>Sera</h1>
+        <!-- Menu Icon (with checkbox)-->
+        <input type="checkbox" name="menu" id="menu-icon">
+        <label for="menu-icon">
+            <i class="fa-solid fa-bars menu-icon"></i>
+        </label>
+        <input type="checkbox" name="page" id="page-icon">
+        <!-- Menu Items -->
+        <div class="menu-items">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#service">Service</a>
+            <a href="#events">Events</a>
+            <a href="#menu">Menu</a>
+            <a href="#pages">
+
+                <label for="page-icon">
+                    Pages
+                    <i class="fa-solid fa-angle-up page-icon"></i>
+
+                    <!-- <i class="fa-brands fa-facebook page-icon-2"></i> -->
+                </label>
+                <div class="items-box">
+                    <a href="">Booking</a>
+                    <a href="">Our Blog</a>
+                </div>
+            </a>
+            <a href="#contact">Contact</a>
+        </div>
+        <!-- Menu Additional Icon and Button -->
+        <div class="icon-items">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <button class="book-btn">Book Now</button>
+        </div>
+    </nav>
+</body>
+
+</html>

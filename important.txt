@@ -1,0 +1,8 @@
+
+    <script src="https://kit.fontawesome.com/7d201dd4bd.js" crossorigin="anonymous"></script>
+
+Navbar (laptop)
+fontsize - 17px
+
+main text
+font family - Playball,cursive
